@@ -9,8 +9,7 @@ Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.gz
 # Source0-md5:	6dc5eed9b200a45cf007f7a7ed4c2d23
 URL:		http://gpe.linuxtogo.org/
 BuildRequires:	gtk+2-devel >= 2:2.10.7
-BuildRequires:	libgpewidget-devel
-BuildRequires:  sed >= 4.0
+BuildRequires:	pkgconfig
 Requires:	gpe-icons
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,6 +24,8 @@ Kalkulator GPE dla urządzeń wbudowanych.
 
 %build
 %{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -Wall \$(GTKCFLAGS)" \
 	PREFIX=%{_prefix}
 
 %install
