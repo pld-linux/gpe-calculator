@@ -1,5 +1,5 @@
-#
 Summary:	GPE calculator
+Summary(pl.UTF-8):	Kalkulator GPE
 Name:		gpe-calculator
 Version:	0.2
 Release:	1
@@ -7,17 +7,18 @@ License:	GPL
 Group:		Applications/Communications
 Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.gz
 # Source0-md5:	6dc5eed9b200a45cf007f7a7ed4c2d23
-URL:		http://gpe.linuxtogo.org
+URL:		http://gpe.linuxtogo.org/
 BuildRequires:	gtk+2-devel >= 2:2.10.7
 BuildRequires:	libgpewidget-devel
 BuildRequires:  sed >= 4.0
 Requires:	gpe-icons
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define gpename %(echo %{name} | sed -e 's/gpe-//')
-
 %description
-GPE calculator, for embedded devices
+GPE calculator, for embedded devices.
+
+%description -l pl.UTF-8
+Kalkulator GPE dla urządzeń wbudowanych.
 
 %prep
 %setup -q
