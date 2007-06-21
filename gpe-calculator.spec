@@ -26,6 +26,7 @@ Kalkulator GPE dla urządzeń wbudowanych.
 %{__make} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags} -Wall \$(GTKCFLAGS)" \
+	LDFLAGS="%{rpmldflags} \$(GTKLDFLAGS)" \
 	PREFIX=%{_prefix}
 
 %install
